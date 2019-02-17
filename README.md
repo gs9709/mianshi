@@ -158,7 +158,97 @@ set结构 map结构
 ${xx} 这种形式，在es5的我们拼接字符串和变量的时候需要i使用 "aa" +b+"aa" 有了es6的模板
 就很好写了；
 
+
+
+
 /* js */
+
+### 数组
+常用的数组方法：
+map : 将数组的每个元素调用一个提供的函数，结果作为一个新的数组返回，并没有改变原来的数组； 
+push ： 在数组最后添加新的元素，此方法改变了数组的长度
+unshift 
+shift
+pop ： 在数组后面删除最后一个元素，并返回数组 此方法改变了数组的长度
+filter： 将所有数组元素进行判断，将满足条件的元素作为一个新的数组返回
+forEach ： 将数组的每个元素执行提供的函数，没有返回值 住一个map进行区别
+some ： 用于检测数组中的元素是否满足指定条件（函数提供）如果有一个元素满足条件 则表达式返回true，剩下的元素不在执行检测，
+如果没有满足条件的元素，则返回false。不会改变原来的数组
+reduce ：相当于一个函数累加器，接受一个回调函数的结果，然后将前一次的函数结果在和下一次的数据再次执行此回掉函数
+isArray  
+concat
+join ： 此方法也是讲数组转化为字符串
+splice 
+toString：此方法将数组转化为字符串
+
+### 字符串 
+concat ：链接多个字符串
+indexOf : 返回字符串中检索指定字符第一次出现的位置
+charAt（index）: 返回指定索引位置的字符
+substring：提取字符串中指定的索引号之间的字符
+substr :从起始索引号提取字符串中指定数目的字符
+slice:提取字符串的片段，并在新的字符串中返回被提取的部分
+split： 将字符串分割成子字符串数组
+length 
+tpUpperCase: 将字符串转化成大写
+trim： 去除字符串首位空白
+
+数组去重（三种）：
+遍历数组法：
+function quchong(arr){
+        let temp = [];
+        for(let i= 0; i < arr.length;i++){
+            if(temp.indexOf(arr[i]) == -1){
+                temp.push(arr[i])
+
+            }
+        }
+        return temp;
+    }
+
+数组下标判断法：
+实现思路：如果当前数组的第i项在当前数组中第一次出现的位置不是i，那么表示第i项时重复的，忽略，否则存入
+
+function unique(arr){
+let hash = []
+for(let i =0; i < arr.length;i++){
+
+      if(arr.indexOf(arr[i]) == i){
+            hash.push(arr[i])
+      }
+
+}
+
+return hash;
+
+}
+
+
+
+
+
+
+es6去重：
+function unique(arr){
+      return Array.from(new Set(arr))
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
